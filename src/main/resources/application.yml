@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo
+  profiles:
+    # 开发环境为默认环境
+    active: dev
+
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+        format_sql: true
+        jdbc:
+          # 设置jpa时区为 GMT+8
+          time_zone: GMT+8
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+    host: "smtp.qq.com"
+    port: 465
+    protocol: smtp
+    username: "your username"
+    password: "your password"
+    default-encoding: UTF-8
+    properties.mail.smtp:
+      enable: true
+      socketFactory.class: "javax.net.ssl.SSLSocketFactory"
+      timeout: 10000
+      connectiontimeout: 10000
+      writetimeout: 10000
+      auth: true
+      starttls:
+        enable: true
+        required: true
+
+reCAPTCHA:
+  url: "https://www.recaptcha.net/recaptcha/api/siteverify"
+  key: "your_server_key"
+  threshold: 0.5
