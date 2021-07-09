@@ -12,6 +12,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author honghui 2021/07/07
  */
@@ -53,5 +55,10 @@ public class UserServiceImpl implements UserService {
   @Override
   public Page<User> findUserList(Pageable pageable) {
     return userRepository.findAll(pageable);
+  }
+
+  @Override
+  public List<User> findUserList() {
+    return userRepository.findAll();
   }
 }

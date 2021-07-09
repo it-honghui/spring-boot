@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.component.GuavaCacheComponent;
 import com.example.demo.component.ReCAPTCHA;
 import com.example.demo.domain.P;
 import com.example.demo.domain.R;
@@ -8,6 +9,8 @@ import com.example.demo.service.UserService;
 import com.example.demo.util.PageUtil;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author honghui 2021/07/07
  */
@@ -15,11 +18,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
 
+  private final GuavaCacheComponent guavaCacheComponent;
   private final UserService userService;
   private final ReCAPTCHA reCAPTCHA;
 
-  public UserController(UserService userService,
+  public UserController(GuavaCacheComponent guavaCacheComponent,
+                        UserService userService,
                         ReCAPTCHA reCAPTCHA) {
+    this.guavaCacheComponent = guavaCacheComponent;
     this.userService = userService;
     this.reCAPTCHA = reCAPTCHA;
   }
@@ -36,9 +42,14 @@ public class UserController {
         .password(password).build()));
   }
 
-  @GetMapping
-  public R<P<User>> findContactDetailsList(@RequestParam(required = false, defaultValue = "0") Integer page,
-                                           @RequestParam(required = false, defaultValue = "10") Integer size) {
+  @GetMapping("/page")
+  public R<P<User>> findUserList(@RequestParam(required = false, defaultValue = "0") Integer page,
+                                 @RequestParam(required = false, defaultValue = "10") Integer size) {
     return R.ok(userService.findUserList(PageUtil.of(page, size)));
+  }
+
+  @GetMapping
+  public R<List<User>> findUserList() {
+    return R.ok(guavaCacheComponent.findUserList());
   }
 }
