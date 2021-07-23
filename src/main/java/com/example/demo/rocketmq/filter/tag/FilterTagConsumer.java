@@ -14,7 +14,7 @@ public class FilterTagConsumer {
     // 1、创建消费者Consumer，制定消费者组名
     DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");
     // 2、指定Nameserver地址
-    consumer.setNamesrvAddr("192.168.137.129:9876;192.168.137.130:9876");
+    consumer.setNamesrvAddr("192.168.110.103:9876;192.168.110.103:9877");
     // 3、订阅主题Topic和Tag
     consumer.subscribe("TopicFilterTag", "Tag1 || Tag2 ");
     // 4、设置回调函数，处理消息
