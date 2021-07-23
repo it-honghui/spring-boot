@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <jmxConfigurator/>
+    <!-- 可以在application.yml中配置日志的存储路径 logging.file.path: D:/logs -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <springProfile name="dev">
         <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
