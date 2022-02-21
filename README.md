@@ -10,3 +10,5 @@
 - 邮件发送
 - Guava Cache 内存型缓存
 - RocketMq Demo
+- AOP 自定义密码注解
+- 文件上传

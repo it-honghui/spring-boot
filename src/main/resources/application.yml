@@ -47,3 +47,10 @@ reCAPTCHA:
   url: "https://www.recaptcha.net/recaptcha/api/siteverify"
   key: "your_server_key"
   threshold: 0.5
+
+file:
+  url: "https://gathub.com/file/"
+  path: "D:\\file\\"
+  allowedFileType: "jpg,gif"
+  maxSize: 20
+  maxFileNameLength: 100
