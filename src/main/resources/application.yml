@@ -15,7 +15,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL55Dialect
+        dialect: com.example.demo.config.DefaultMySQL55Dialect
         format_sql: true
         jdbc:
           # 设置jpa时区为 GMT+8
@@ -54,3 +54,16 @@ file:
   allowedFileType: "jpg,gif"
   maxSize: 20
   maxFileNameLength: 100
+
+rpc:
+  rpcInfoList:
+    - name: "ETHEREUM"
+      url: "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+      chainId: 3
+      symbol: "ETH"
+      browser: "https://ropsten.etherscan.io"
+    - name: "BNB CHAIN"
+      url: "https://data-seed-prebsc-1-s1.binance.org:8545"
+      chainId: 97
+      symbol: "BNB"
+      browser: "https://testnet.bscscan.com"
