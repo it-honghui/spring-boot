@@ -12,3 +12,5 @@
 - RocketMq Demo
 - AOP 自定义密码注解
 - 文件上传
+- 自动建表自定义建表编码
+- yml list map
