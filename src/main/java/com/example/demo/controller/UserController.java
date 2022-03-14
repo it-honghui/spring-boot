@@ -4,10 +4,13 @@ import com.example.demo.component.GuavaCacheComponent;
 import com.example.demo.component.ReCAPTCHA;
 import com.example.demo.domain.P;
 import com.example.demo.domain.R;
+import com.example.demo.domain.Recode;
 import com.example.demo.domain.entity.User;
 import com.example.demo.service.UserService;
 import com.example.demo.util.PageUtil;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -52,4 +55,23 @@ public class UserController {
   public R<List<User>> findUserList() {
     return R.ok(guavaCacheComponent.findUserList());
   }
+
+  @GetMapping("/query")
+  public R<List<User>> findUserQuery(@RequestParam(required = false) String username,
+                                     @RequestParam(required = false) String password) {
+    return R.ok(userService.findUserQuery(username, password));
+  }
+
+  @GetMapping("/{id}")
+  public R<User> findUser(@PathVariable Long id) {
+    return R.ok(userService.findUser(id)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, Recode.NOT_FOUND.getMsg() + " user")));
+  }
+
+  @PostMapping("/updateUsername/{id}")
+  public void updateUsername(@PathVariable Long id,
+                             @RequestParam String username) {
+    userService.updateUsername(id, username);
+  }
+
 }

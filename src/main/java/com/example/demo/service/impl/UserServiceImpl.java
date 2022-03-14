@@ -5,6 +5,7 @@ import com.example.demo.component.MailComponent;
 import com.example.demo.domain.ERR;
 import com.example.demo.domain.Recode;
 import com.example.demo.domain.entity.User;
+import com.example.demo.domain.query.UserQuery;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author honghui 2021/07/07
@@ -60,5 +62,22 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<User> findUserList() {
     return userRepository.findAll();
+  }
+
+  @Override
+  public Optional<User> findUser(Long id) {
+    return userRepository.findById(id);
+  }
+
+  @Override
+  public List<User> findUserQuery(String username, String password) {
+    return userRepository.findAll(UserQuery.builder()
+        .username(username)
+        .password(password).build().toSpec());
+  }
+
+  @Override
+  public void updateUsername(Long id, String username) {
+    userRepository.updateUsername(id, username);
   }
 }
