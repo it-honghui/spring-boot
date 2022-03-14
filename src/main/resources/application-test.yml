@@ -4,4 +4,7 @@ spring:
     username: "root"
     password: "123456"
 
-admin_email: "wanghonghui_work@163.com"
+email:
+  adminEmail: "wanghonghui_work@163.com"
+  ccEmailList:
+    - "850434439@qq.com"

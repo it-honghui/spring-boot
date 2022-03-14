@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+<head>
+  <style type="text/css">
+      @media screen and (max-width: 600px) {
+          table {
+              border: 0;
+          }
+
+          table tr {
+              margin-bottom: 10px;
+              display: block;
+              border-bottom: 2px solid #ddd;
+          }
+
+          table td {
+              display: block;
+              text-align: right;
+              font-size: 13px;
+              border-bottom: 1px dotted #ccc;
+          }
+
+          table td:last-child {
+              border-bottom: 0;
+          }
+
+          table td:before {
+              content: attr(data-label);
+              float: left;
+              text-transform: uppercase;
+              font-weight: bold;
+          }
+      }
+  </style>
+</head>
+<body style="font-family: arial, serif;">
+<table style="border: 1px solid #ccc;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border-collapse: collapse;
+          border-spacing: 0;">
+  <caption style="padding: 10px;text-align: center;font-size: 20px;letter-spacing: 1px;">账号列表信息</caption>
+  <thead>
+  <tr style="border: 1px solid #ddd;padding: 5px;">
+    <th style="padding: 10px;text-align: center;font-size: 14px;letter-spacing: 1px;">username</th>
+    <th style="padding: 10px;text-align: center;font-size: 14px;letter-spacing: 1px;">password</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{content}}
+  </tbody>
+</table>
+</body>
+</html>

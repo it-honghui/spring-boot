@@ -25,8 +25,9 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+# qq 企业邮箱配置
   mail:
-    host: "smtp.qq.com"
+    host: "hwsmtp.exmail.qq.com"
     port: 465
     protocol: smtp
     username: "your username"

@@ -20,6 +20,7 @@ public enum Recode {
   FILE_UPLOAD_TYPE_NOT_ALLOWED(106, "上传文件类型不被允许"),
   FILE_TOO_LARGE(107, "文件过大"),
   FILE_NAME_TOO_LONG(108, "文件名称过长"),
+  FAIL_RENDER_MAIL(109, "邮件模板读取失败"),
   ;
 
   private final Integer code;

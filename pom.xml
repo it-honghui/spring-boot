@@ -21,10 +21,11 @@
         <java.version>1.8</java.version>
         <spring-boot.version>${project.parent.version}</spring-boot.version>
         <hutool.version>5.7.21</hutool.version>
-        <guava.version>31.0.1-jre</guava.version>
+        <guava.version>31.1-jre</guava.version>
         <rocketmq.version>4.9.2</rocketmq.version>
         <log4j-api.version>2.17.1</log4j-api.version>
         <log4j-to-slf4j.version>2.17.0</log4j-to-slf4j.version>
+        <jknack.version>4.3.0</jknack.version>
     </properties>
 
     <dependencies>
@@ -94,6 +95,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-to-slf4j</artifactId>
             <version>${log4j-to-slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.jknack</groupId>
+            <artifactId>handlebars</artifactId>
+            <version>${jknack.version}</version>
         </dependency>
 
     </dependencies>
