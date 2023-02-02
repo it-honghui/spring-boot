@@ -68,3 +68,10 @@ rpc:
       chainId: 97
       symbol: "BNB"
       browser: "https://testnet.bscscan.com"
+
+# 默认关闭swagger，防止正式环境暴露接口文档
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: false
+    enabled: false

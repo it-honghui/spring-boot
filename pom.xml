@@ -26,12 +26,18 @@
         <log4j-api.version>2.17.1</log4j-api.version>
         <log4j-to-slf4j.version>2.17.0</log4j-to-slf4j.version>
         <jknack.version>4.3.0</jknack.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <dependency>
@@ -101,6 +107,13 @@
             <groupId>com.github.jknack</groupId>
             <artifactId>handlebars</artifactId>
             <version>${jknack.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
 
     </dependencies>

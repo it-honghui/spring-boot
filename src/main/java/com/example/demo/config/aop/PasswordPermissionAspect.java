@@ -25,6 +25,12 @@ import java.lang.reflect.Method;
 @Component
 public class PasswordPermissionAspect {
 
+  /**
+   *       获取json中的请求参数
+   *       Object[] args = joinPoint.getArgs();
+   *       JSONObject jsonObject = JSONUtil.parseObj(args[0]);
+   *       String password = jsonObject.getStr("password", null);
+   */
   @Before("@annotation(com.example.demo.config.annotation.PasswordPermission)")
   private void before(JoinPoint joinPoint) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();

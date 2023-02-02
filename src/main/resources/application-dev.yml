@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false
     username: "root"
     password: "123456"
 
@@ -8,3 +8,12 @@ email:
   adminEmail: "wanghonghui_work@163.com"
   ccEmailList:
     - "850434439@qq.com"
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+    enabled: true
+    swagger:
+      v2:
+        host: "127.0.0.1:8080"

@@ -5,13 +5,16 @@ import com.example.demo.component.ReCAPTCHA;
 import com.example.demo.domain.P;
 import com.example.demo.domain.R;
 import com.example.demo.domain.Recode;
+import com.example.demo.domain.dto.LoginDto;
 import com.example.demo.domain.entity.User;
 import com.example.demo.service.UserService;
 import com.example.demo.util.PageUtil;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -33,6 +36,12 @@ public class UserController {
     this.reCAPTCHA = reCAPTCHA;
   }
 
+  @ApiOperation("登录")
+  @PostMapping("/login")
+  public R<LoginDto> login(@Valid @RequestBody
+                           LoginDto loginDto) {
+    return R.ok(loginDto);
+  }
 
   @PostMapping
   public R<User> createContactDetails(@RequestParam String token,
