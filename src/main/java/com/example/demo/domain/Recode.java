@@ -22,6 +22,7 @@ public enum Recode {
   FILE_NAME_TOO_LONG(108, "文件名称过长"),
   FAIL_RENDER_MAIL(109, "邮件模板读取失败"),
   REGULAR_EXPRESSION_VALIDATION_FAILED(110, "正则表达式校验未通过!"),
+  TOO_MANY_REQUEST_ERROR(111, "您的ip请求过多，请稍后重试!"),
   ;
 
   private final Integer code;
