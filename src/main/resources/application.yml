@@ -75,3 +75,5 @@ springfox:
     swagger-ui:
       enabled: false
     enabled: false
+
+ipLimit: 100

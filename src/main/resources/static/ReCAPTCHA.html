@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ReCAPTCHA</title>
-  <script src='https://www.google.com/recaptcha/api.js?render=your_html_key'></script>
-  <script src='https://cdn.bootcss.com/jquery/1.12.0/jquery.min.js'></script>
-  <script>
-    grecaptcha.ready(function () {
-      grecaptcha.execute('your_html_key', {action: 'submit'}).then(function (token) {
-        console.log(token)
-        $.ajax({
-          url: "http://127.0.0.1:8080/user",
-          data: {
-            "token": token,
-            "action": "submit",
-            "username": "张三",
-            "password": "123456",
-          },
-          type: "POST",
-          success: function (res) {
-            console.log(JSON.stringify(res))
-          },
-          error: function (res) {
-            console.log(JSON.stringify(res))
-          }
+    <meta charset="UTF-8">
+    <title>ReCAPTCHA V3</title>
+    <script src='https://www.google.com/recaptcha/api.js?render=6LdIFAsbAAAAAA5RZb4SK0cCzHdp9YbltsLZDRNi'></script>
+    <script src='https://cdn.bootcss.com/jquery/1.12.0/jquery.min.js'></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdIFAsbAAAAAA5RZb4SK0cCzHdp9YbltsLZDRNi', {action: 'submit'}).then(function (token) {
+                console.log(token)
+                // $.ajax({
+                //     url: "http://127.0.0.1:8080/user",
+                //     data: {
+                //         "token": token,
+                //         "action": "submit",
+                //         "username": "张三",
+                //         "password": "123456",
+                //     },
+                //     type: "POST",
+                //     success: function (res) {
+                //         console.log(JSON.stringify(res))
+                //     },
+                //     error: function (res) {
+                //         console.log(JSON.stringify(res))
+                //     }
+                // });
+            });
         });
-      });
-    });
-  </script>
 
+    </script>
 </head>
 <body>
-测试ReCAPTCHA(谷歌验证器，防止接口恶意调用)
+测试ReCAPTCHA V3(谷歌验证器，防止接口恶意调用)
 </body>
 </html>
